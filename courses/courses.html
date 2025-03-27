@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة الكورسات</title>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script> 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            emailjs.init("PGtztibZ6P4HIegi4"); 
+
+            // تحميل قائمة الطلاب من localStorage إذا كانت موجودة
+            if (!localStorage.getItem("studentCodes")) {
+                // قائمة افتراضية للطلاب (يمكن تحديثها لاحقًا)
+                const defaultStudentCodes = {
+                    "123": { name: "مينا", class: "classroom.html" },
+                    "102": { name: "محمد علي", class: "first-class.html" },
+                    "103": { name: "سارة أحمد", class: "first-class.html" },
+                    "201": { name: "محمود خالد", class: "second-class.html" },
+                    "202": { name: "نور حسن", class: "second-class.html" },
+                    "203": { name: "يوسف علي", class: "second-class.html" },
+                    "301": { name: "علي إبراهيم", class: "third-class.html" },
+                    "302": { name: "هبة يوسف", class: "third-class.html" },
+                    "303": { name: "زياد مصطفى", class: "third-class.html" },
+                    "401": { name: "منى عبد الرحمن", class: "fourth-class.html" },
+                    "402": { name: "عمر فاروق", class: "fourth-class.html" },
+                    "403": { name: "ليلى سامي", class: "fourth-class.html" },
+                    "501": { name: "سمير حسين", class: "fifth-class.html" },
+                    "502": { name: "آلاء عماد", class: "fifth-class.html" },
+                    "503": { name: "نادر سعيد", class: "fifth-class.html" }
+                };
+                localStorage.setItem("studentCodes", JSON.stringify(defaultStudentCodes));
+            }
+        });
+
+        function sendEmail() {
+            const name = document.getElementById("studentName").value.trim();
+            const code = document.getElementById("studentCode").value.trim();
+            const errorMessage = document.getElementById("errorMessage");
+
+            if (name === "" || code === "") {
+                errorMessage.textContent = " همممم. شكلك نسيت الكود او الاسم بتاعك ";
+                return;
+            }
+
+            // جلب قائمة الطلاب من localStorage
+            const studentCodes = JSON.parse(localStorage.getItem("studentCodes"));
+
+            if (studentCodes[code]) {
+                if (studentCodes[code].name === name) {
+                    alert(` ازيك يا ${name}! يتم توجيهك الآن...`);
+                    window.location.href = studentCodes[code].class;
+                } else {
+                    errorMessage.textContent = "هممممم. الاسم ده مش متطابق مع الكود بتاعك";
+                }
+            } else {
+                window.location.href = "error.html";
+            }
+        }
+
+        // عرض بيانات المستخدم من localStorage
+        document.addEventListener("DOMContentLoaded", function() {
+            let firstName = localStorage.getItem('userFirstName');
+            let lastName = localStorage.getItem('userLastName');
+            let year = localStorage.getItem('userYear');
+            let code = localStorage.getItem('userCode');
+
+            if (firstName && lastName && year && code) {
+                document.getElementById("studentName").value = firstName + " " + lastName;
+                document.getElementById("studentCode").value = code;
+            }
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif; /* خط أنيق */
+            background-color: #f8f9fa;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #800000; /* لون الخلفية */
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            font-size: 22px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ظل خفيف */
+        }
+
+        .navbar .title {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .navbar .home-button {
+            background-color: #007bff;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .navbar .home-button:hover {
+            background-color: white;
+            color: #007bff;
+            border: 2px solid #007bff;
+        }
+
+        .container {
+            margin-top: 50px;
+            padding: 30px;
+            background: white;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* ظل خفيف */
+        }
+
+        h2 {
+            color: #800000; /* لون العنوان */
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+            margin: 10px 0 5px;
+            color: #555; /* لون النص */
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #007bff; /* لون الحدود عند التركيز */
+            outline: none;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+            margin-top: 20px;
+            border: 2px solid white;
+        }
+
+        button:hover {
+            background-color: white;
+            color: #007bff;
+            border: 2px solid #007bff;
+        }
+
+        .error-message {
+            color: #d9534f; /* لون الخطأ */
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+    <!-- إضافة خط من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="navbar">
+        <button onclick="window.location.href='C:\Users\Toto\Desktop\كنيسه القدبسين بطرس و بولس\index.html'" class="home-button">الرئيسية</button>
+        <div class="title">كنيسة القديسين بطرس وبولس</div>
+        <div>الكورسات</div>
+    </div>
+
+    <div class="container">
+        <h2>ازيك في صفحه تسجيل الدخول </h2>
+        <p>لازم تدخل اسمك و الكود بتاعك علي شان تعرف تخش علي الكورسات</p>
+
+        <form id="studentForm">
+            <label> الاسم:</label>
+            <input type="text" id="studentName" placeholder="اسم المخدوم" required>
+
+            <label> كود:</label>
+            <input type="text" id="studentCode" placeholder="كود المخدوم" required>
+
+            <button type="button" onclick="sendEmail()"> دخول</button>
+        </form>
+
+        <p id="errorMessage" class="error-message"></p>
+    </div>
+
+</body>
+</html>

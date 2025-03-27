@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصف الدراسي</title>
+    <link href="https://cdn.emailjs.com/dist/email.min.js" rel="stylesheet">
+    <style>
+        @import url('https://cdn.emailjs.com/dist/email.min.js');
+        body {
+            font-family: 'Amiri', serif;
+            direction: rtl;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #800000;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .navbar .title {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .navbar .home-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: 1s;
+        }
+
+        .navbar .home-button:hover {
+            background-color: white;
+            color: #007bff;
+        }
+
+        .container {
+            margin-top: 50px;
+            padding: 30px;
+            background: white;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .dropbtn {
+            background-color: #800000;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        .dropbtn:hover {
+            background-color: #0056b3;
+        }
+
+        .dropdown-content {
+            display: none;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            text-align: right;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 2s ease-in-out;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+            transition: background-color 2s;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown-content.show {
+            display: block;
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <button onclick="window.location.href='C:\Users\Toto\Desktop\كنيسه القدبسين بطرس و بولس\index.html'" class="home-button">الرئيسية</button>
+        <div class="title">مرحبًا، <span id="studentName">الطالب</span>!</div>
+    </div>
+
+    <div class="container">
+        <h2>المقررات الدراسية</h2>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown('course1')">📂 كورس 1</button>
+            <div id="course1" class="dropdown-content">
+                <a href="#">📜 الدرس 1</a>
+                <a href="#">📜 الدرس 2</a>
+                <a href="#">📜 الدرس 3</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown('course2')">📂 كورس 2</button>
+            <div id="course2" class="dropdown-content">
+                <a href="#">📜 الدرس 1</a>
+                <a href="#">📜 الدرس 2</a>
+                <a href="#">📜 الدرس 3</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown(id) {
+            var dropdown = document.getElementById(id);
+            if (dropdown.classList.contains("show")) {
+                dropdown.classList.remove("show");
+            } else {
+                dropdown.classList.add("show");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            let studentName = localStorage.getItem("studentName") || "الطالب";
+            document.getElementById("studentName").textContent = studentName;
+        });
+    </script>
+</body>
+</html>
