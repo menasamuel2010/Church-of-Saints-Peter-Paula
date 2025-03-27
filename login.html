@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تسجيل الدخول إلى كنيسة القديسين بطرس وبولس">
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:type" content="login">
+    <title>تسجيل الدخول - كنيسة القديسين بطرس وبولس</title>
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="123.icon">
+    
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+        }
+        .form-control {
+            margin-bottom: 10px;
+        }
+        .btn-primary {
+            background-color: #800000;
+            border: none;
+        }
+        .password-container {
+            position: relative;
+        }
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+        .form-control.is-invalid {
+            border-color: red;
+        }
+        .g-signin2 {
+            margin: 20px 0;
+        }
+    </style>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
+    <script>
+        (function() {
+            emailjs.init("PGtztibZ6P4HIegi4");
+        })();
+
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            var formData = {
+                firstName: profile.getGivenName(),
+                lastName: profile.getFamilyName(),
+                email: profile.getEmail()
+            };
+
+            localStorage.setItem('userFirstName', formData.firstName);
+            localStorage.setItem('userLastName', formData.lastName);
+            localStorage.setItem('isLoggedIn', 'true');
+
+            emailjs.send('service_zuwciwm', 'template_tu63ek3', formData)
+            .then(function(response) {
+                window.location.href = 'index.html';
+            }, function(error) {
+                alert('حدث خطأ أثناء إرسال بيانات التسجيل.');
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">سجل معنا الان في كنيسه القديسين بطرس و بولس بشبين الكوم</h2>
+
+        
+        
+
+        <form id="loginForm" autocomplete="on">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="الاسم الأول" name="firstName" autocomplete="given-name" required>
+                <span class="error-message" id="firstNameError"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="الاسم الأخير" name="lastName" autocomplete="family-name" required>
+                <span class="error-message" id="lastNameError"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="البريد الإلكتروني" name="email" autocomplete="email" required> 
+                <span class="error-message" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="phone" value="+20" name="phone" autocomplete="tel-national" required pattern="\+20[0-9]{10}">
+                <span class="error-message" id="phoneError"></span>
+            </div>
+
+            <div class="form-group password-container">
+                <input type="password" class="form-control" id="password" placeholder="كلمة المرور" name="password" autocomplete="new-password" required>
+                <span class="toggle-password">🔒</span>
+                <span class="error-message" id="passwordError"></span>
+            </div>
+
+            <div class="form-group password-container">
+                <input type="password" class="form-control" id="confirmPassword" placeholder="تأكيد كلمة المرور" autocomplete="new-password" required>
+                <span class="toggle-password">🔒</span>
+                <span class="error-message" id="confirmPasswordError"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">تسجيل</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        // Function to toggle password visibility
+        $('.toggle-password').on('click', function() {
+            let passwordField = $(this).prev('input');
+            let passwordFieldType = passwordField.attr('type');
+            if (passwordFieldType === 'password') {
+                passwordField.attr('type', 'text');
+                $(this).text('👁️');
+            } else {
+                passwordField.attr('type', 'password');
+                $(this).text('🔒');
+            }
+        });
+
+        const phoneInput = document.getElementById('phone');
+        phoneInput.addEventListener('focus', function() {
+            if (this.value === '') {
+                this.value = '+20';
+            }
+        });
+        phoneInput.addEventListener('input', function() {
+            if (!this.value.startsWith('+20')) {
+                this.value = '+20';
+            }
+        });
+        phoneInput.addEventListener('keydown', function(e) {
+            const cursorPosition = this.selectionStart;
+            if (cursorPosition < 3 && (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight' && e.key !== 'Tab')) {
+                e.preventDefault();
+            }
+        });
+
+        // Validation function
+        function validateForm() {
+            let isValid = true;
+
+            // Clear previous error messages
+            $('.error-message').text('');
+            $('.form-control').removeClass('is-invalid');
+
+            let firstName = $('input[name="firstName"]').val();
+            let lastName = $('input[name="lastName"]').val();
+            let email = $('input[name="email"]').val();
+            let phone = $('input[name="phone"]').val();
+            let password = $('#password').val();
+            let confirmPassword = $('#confirmPassword').val();
+
+            if (firstName === '') {
+                $('#firstNameError').text('يجب كتابة الاسم الأول.');
+                $('input[name="firstName"]').addClass('is-invalid');
+                isValid = false;
+            }
+
+            if (lastName === '') {
+                $('#lastNameError').text('يجب كتابة الاسم الأخير.');
+                $('input[name="lastName"]').addClass('is-invalid');
+                isValid = false;
+            }
+
+            if (email === '') {
+                $('#emailError').text('يجب كتابة البريد الإلكتروني.');
+                $('input[name="email"]').addClass('is-invalid');
+                isValid = false;
+            }
+
+            if (!phone.match(/^\+20[0-9]{10}$/)) {
+                $('#phoneError').text('يجب إدخال رقم هاتف صحيح يبدأ بـ +20.');
+                $('input[name="phone"]').addClass('is-invalid');
+                isValid = false;
+            }
+
+            const passwordRegex = /^(?=.*[0-9])(?=.*[a-zA-Z]).{8,}$/;
+            if (!passwordRegex.test(password)) {
+                $('#passwordError').text('يجب أن تحتوي كلمة المرور على 8 حروف على الأقل ورقماً واحداً.');
+                $('#password').addClass('is-invalid');
+                isValid = false;
+            }
+
+            if (password !== confirmPassword) {
+                $('#confirmPasswordError').text('كلمة المرور وتأكيد كلمة المرور غير متطابقتين.');
+                $('#confirmPassword').addClass('is-invalid');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        $('#loginForm').on('submit', function(e) {
+            e.preventDefault();
+            if (validateForm()) {
+                let formData = {
+                    firstName: $('input[name="firstName"]').val(),
+                    lastName: $('input[name="lastName"]').val(),
+                    email: $('input[name="email"]').val(),
+                    phone: $('input[name="phone"]').val(),
+                    password: $('#password').val(),
+                };
+
+                emailjs.send('service_zuwciwm', 'template_tu63ek3', formData)
+                .then(function(response) {
+                    localStorage.setItem('userFirstName', formData.firstName);
+                    localStorage.setItem('userLastName', formData.lastName);
+                    localStorage.setItem('isLoggedIn', 'true');
+                    window.location.href = 'index.html';
+                }, function(error) {
+                    alert('حدث خطأ أثناء إرسال بيانات التسجيل.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإنجيل</title>
+    <link href="2 ().htmlhttps://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+        body {
+            font-family: 'Amiri', serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header, .main-content, .footer {
+            padding: 10px;
+            margin: 0;
+        }
+
+        .navbar {
+            background-color: #800000;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            flex-wrap: wrap;
+        }
+
+        .navbar .site-name {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .toggle-btn, .theme-toggle {
+            background-color: #800000;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        .theme-toggle {
+            font-size: 1em;
+            margin-right: 10px;
+        }
+
+        .back-button {
+            background-color: #800000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        footer {
+            background: #1f1f1f;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            font-size: 0.875rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        footer a {
+            color: #3ad1ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #1e90ff;
+        }
+
+        /* Drop-down Button */
+        .dropbtn {
+            background-color: #800000;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            width: 100%;
+            text-align: right;
+        }
+
+        .dropbtn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* Dropdown container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 100%;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            text-align: right;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            border-radius: 0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .dropbtn {
+                font-size: 14px;
+                padding: 12px;
+            }
+
+            .dropdown-content {
+                min-width: 100%;
+            }
+
+            .navbar .site-name {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dropbtn {
+                font-size: 12px;
+                padding: 10px;
+            }
+
+            .navbar .site-name {
+                font-size: 1.2em;
+            }
+
+            .back-button, .theme-toggle {
+                font-size: 0.9em;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <header class="navbar">
+        <span class="site-name"></span>
+        <div>
+            <button class="back-button" onclick="window.location.href='2 ().htmlenjeel.html';">الرجوع</button>
+        </div>
+    </header>
+    <main class="main-content">
+        <section class="about-section">
+            <div class="dropdown">
+                <button class="dropbtn" onclick="toggleDropdown('oldTestament')">المزامير</button>
+                <div id="oldTestament" class="dropdown-content">
+                    <li><a href="2 (1).html">المزمور الاول</a></li>
+                    <li><a href="2 (2).html">المزمورالثاني</a></li>
+                    <li><a href="2 (3).html">المزمور الثالث</a></li>
+                    <li><a href="2 (4).html">المزمورالرابع</a></li>
+                    <li><a href="2 (5).html">المزمور الخامس</a></li>
+                    <li><a href="2 (6).html">المزمور السادس</a></li>
+                    <li><a href="2 (7).html">المزمور السابع</a></li>
+                    <li><a href="2 (8).html">المزمور الثامن</a></li>
+                    <li><a href="2 (9).html">المزمور التاسع</a></li>
+                    <li><a href="2 (10).html">المزمور العاشر</a></li>
+                    <li><a href="2 (11).html">المزمور الحادي عشر</a></li>
+                    <li><a href="2 (12).html">المزمور الثاني عشر</a></li>
+                    <li><a href="2 (13).html">المزمور الثالث عشر</a></li>
+                    <li><a href="2 (14).html">المزمور الرابع عشر</a></li>
+                    <li><a href="2 (15).html">المزمور الخامس عشر</a></li>
+                    <li><a href="2 (16).html">المزمور السادس عشر</a></li>
+                    <li><a href="2 (17).html">المزمور السابع عشر</a></li>
+                    <li><a href="2 (18).html">المزمور الثامن عشر</a></li>
+                    <li><a href="2 (19).html">المزمور التاسع عشر</a></li>
+                    <li><a href="2 (20).html">المزمور العشرون</a></li>
+                    <li><a href="2 (21).html">المزمورالحادي و العشرون</a></li>
+                    <li><a href="2 (22).html">المزمورالثاني و العشرون</a></li>
+                    <li><a href="2 (23).html">المزمور الثالث و العشرون</a></li>
+                    <li><a href="2 (24).html">المزمور الرابع و العشرون</a></li>
+                    <li><a href="2 (25).html">المزمور الخامس و العشرون</a></li>
+                    <li><a href="2 (26).html">المزمور السادس و العشرون</a></li>
+                    <li><a href="2 (27).html">المزمور السابع و العشرون</a></li>
+                    <li><a href="2 (28).html">المزمورالثامن و العشرون</a></li>
+                    <li><a href="2 (29).html">المزمور التاسع و العشرون</a></li>
+                    <li><a href="2 (30).html">المزمور الثلاثون</a></li>
+                    <li><a href="2 (31).html">المزمور الحادي و الثلاثون</a></li>
+                    <li><a href="2 (32).html">المزمور الثاني و الثلاثون</a></li>
+                    <li><a href="2 (33).html">المزمور الثالث و الثلاثون</a></li>
+                    <li><a href="2 (34).html">المزمور الرابع و الثلاثون</a></li>
+                    <li><a href="2 (35).html">المزمور الخامس و الثلاثون </a></li>
+                    <li><a href="2 (36).html">المزمور السادس و الثلاثون</a></li>
+                    <li><a href="2 (37).html">المزمور السابع والثلاثون</a></li>
+        <li><a href="2 (38).html">المزمور الثامن و الثلاثون</a></li>
+        <li><a href="2 (39).html">المزمور التاسع و الثلاثون</a></li>
+        <li><a href="2 (40).html">المزمور الاربعون</a></li>
+        <li><a href="2 (41).html">المزمور الحادي و الاربعون </a></li>
+        <li><a href="2 (42).html">المزمور الثاني و الاربعون</a></li>
+        <li><a href="2 (43).html">المزمور الثالث و الاربعون</a></li>
+        <li><a href="2 (44).html">المزمور الرابع و الاربعون</a></li>
+        <li><a href="2 (45).html">المزمور الخامس و الاربعون </a></li>
+        <li><a href="2 (46).html">المزمور السادس و الاربعون</a></li>
+        <li><a href="2 (47).html">المزمور السابع و الاربعون</a></li>
+        <li><a href="2 (48).html">المزمور الثامن و الاربعون </a></li>
+        <li><a href="2 (49).html">المزمور التاسع و الاربعون </a></li>
+        <li><a href="2 (50).html">المزمور الخمسون</a></li>
+        <li><a href="2 (51).html">المزمور الحادي و الخمسون</a></li>
+        <li><a href="2 (52).html">المزمور الثاني و الخمسون</a></li>
+        <li><a href="2 (53).html">المزمور الثالث و الخمسون</a></li>
+        <li><a href="2 (54).html">المزمور الرابع و الخمسون</a></li>
+        <li><a href="2 (55).html">المزمور الخامس و الخمسون</a></li>
+        <li><a href="2 (56).html">المزمور السادس و الخمسون</a></li>
+        <li><a href="2 (57).html">المزمور السابع و الخمسون</a></li>
+        <li><a href="2 (58).html">المزمور الثامن و الخمسون </a></li>
+        <li><a href="2 (59).html">المزمور التاسع و الخمسون</a></li>
+        <li><a href="2 (60).html">المزمور الس تون</a></li>
+        <li><a href="2 (61).html">المزمور الحادي و الستون</a></li>
+        <li><a href="2 (62).html">المزمور الثاني و الستون</a></li>
+        <li><a href="2 (63).html">المزمور الثالث و الستون</a></li>
+        <li><a href="2 (64).html">المزمور الرابع و الستون</a></li>
+        <li><a href="2 (65).html">المزمور الخامس و الستون </a></li>
+        <li><a href="2 (66).html">المزمور السادس و الستون</a></li>
+        <li><a href="2 (67).html">المزمور السابع و الستون</a></li>
+        <li><a href="2 (68).html">المزمور الثامن و الستون</a></li>
+        <li><a href="2 (69).html">المزمور التاسع و الستون</a></li>
+        <li><a href="2 (70).html">المزمور السبعون</a></li>
+        <li><a href="2 (71).html">المزمور الحادي و السبعون</a></li>
+        <li><a href="2 (72).html">المزمور الثاني و السبعون</a></li>
+        <li><a href="2 (73).html">المزمور الثالث و السبعون</a></li>
+        <li><a href="2 (74).html">المزمور الرابع و السبعون</a></li>
+        <li><a href="2 (75).html">المزمور الخامس و السبعون</a></li>
+        <li><a href="2 (76).html">المزمور السادس و السبعون</a></li>
+        <li><a href="2 (77).html">المزمور السابع و السبعون</a></li>
+        <li><a href="2 (78).html">المزمور الثامن و السبعون</a></li>
+        <li><a href="2 (79).html">المزمور التاسع و السبعون</a></li>
+        <li><a href="2 (80).html">المزمور الثمانون</a></li>
+        <li><a href="2 (81).html">المزمور الحادي و الثمانون</a></li>
+        <li><a href="2 (82).html">المزمور الثاني و الثمانون</a></li>
+        <li><a href="2 (83).html">المزمور الثالث و الثمانون</a></li>
+        <li><a href="2 (84).html">المزمور الرابع و الثمانون</a></li>
+        <li><a href="2 (85).html">المزمور الخامس و الثمانون</a></li>
+        <li><a href="2 (86).html">المزمور السادس و الثمانون</a></li>
+        <li><a href="2 (87).html">المزمور السابع و الثمانون</a></li>
+        <li><a href="2 (88).html">المزمور الثامن و الثمانون</a></li>
+        <li><a href="2 (89).html">المزمور التاسع و الثمانون</a></li>
+        <li><a href="2 (90).html">المزمور التسعون</a></li>
+        <li><a href="2 (91).html">المزمور الحادي و التسعون</a></li>
+        <li><a href="2 (92).html">المزمور الثاني و التسعون</a></li>
+        <li><a href="2 (93).html">المزمور الثالث و التسعون</a></li>
+        <li><a href="2 (94).html">المزمور الرابع و التسعون</a></li>
+        <li><a href="2 (95).html">المزمور الخامس و التسعون</a></li>
+        <li><a href="2 (96).html">المزمور السادس و التسعون</a></li>
+        <li><a href="2 (97).html">المزمور السابع و التسعون </a></li>
+        <li><a href="2 (98).html">المزمور الثامن و التسعون</a></li>
+        <li><a href="2 (99).html">المزمور التاسع و التسعون</a></li>
+        <li><a href="2 (100).html">المزمور المئه</a></li>
+        <li><a href="2 (101).html">المزمور المئه و الواحد</a></li>
+        <li><a href="2 (102).html">المزمور المئه و الثاني</a></li>
+        <li><a href="2 (103).html">المزمور المئه و الثالث</a></li>
+        <li><a href="2 (104).html">المزمور المئه و الرابع</a></li>
+        <li><a href="2 (105).html">المزمور المئه و الخمسه</a></li>
+        <li><a href="2 (106).html">المزمور المئه و السادس</a></li>
+        <li><a href="2 (107).html">المزمور المئه و السابع</a></li>
+        <li><a href="2 (108).html">المزمور المئه و الثامن</a></li>
+        <li><a href="2 (109).html">المزمور المئه و التاسع</a></li>
+        <li><a href="2 (110).html">المزمور المئه و العاشر</a></li>
+        <li><a href="2 (111).html">المزمور المئه و الحادي عشر</a></li>
+        <li><a href="2 (112).html">المزمور المئه و الثاني عشر</a></li>
+        <li><a href="2 (113).html">المزمور المئه و الثالث عشر</a></li>
+        <li><a href="2 (114).html">المزمور المئه و الرابع عشر</a></li>
+        <li><a href="2 (115).html">المزمور المئه و الخامس عشر</a></li>
+        <li><a href="2 (116).html">المزمور المئه و السادس عشر</a></li>
+        <li><a href="2 (117).html">المزمور المئه و السابع عشر</a></li>
+        <li><a href="2 (118).html">المزمور المئه و الثامن عشر</a></li>
+        <li><a href="2 (119).html">المزمور المئه و التاسع عشر</a></li>
+        <li><a href="2 (120).html">المزمور المئه و العشرون</a></li>
+        <li><a href="2 (121).html">المزمور المئه و الحادي و العشرون</a></li>
+        <li><a href="2 (122).html">المزمور المئه و الثاني و العشرون</a></li>
+        <li><a href="2 (123).html">المزمور المئه و الثالث و العشرون</a></li>
+        <li><a href="2 (124).html">المزمور المئه و الرابع و العشرون</a></li>
+        <li><a href="2 (125).html">المزمور المئه و الخامس و العشرون</a></li>
+        <li><a href="2 (126).html">المزمور المئه و السادس و العشرون</a></li>
+        <li><a href="2 (127).html">المزمور المئه و السابع و العشرون</a></li>
+        <li><a href="2 (128).html">المزمور المئه و الثامن و العشرون</a></li>
+        <li><a href="2 (129).html">المزمور المئه و التاسع و العشرون</a></li>
+        <li><a href="2 (130).html">المزمور المئه و الثلاثون</a></li>
+        <li><a href="2 (131).html">المزمور المئه و الحادي و الثلاثون</a></li>
+        <li><a href="2 (132).html">المزمور المئه و الثاني و الثلاثون</a></li>
+        <li><a href="2 (133).html">المزمور المئه و الثالث و الثلاثون</a></li>
+        <li><a href="2 (134).html">المزمور المئه و الرابع و الثلاثون</a></li>
+        <li><a href="2 (135).html">المزمور المئه و الخامس و الثلاثون</a></li>
+        <li><a href="2 (136).html">المزمور المئه و السادس و الثلاثون</a></li>
+        <li><a href="2 (137).html">المزمور المئه و السابع و الثلاثون</a></li>
+        <li><a href="2 (138).html">المزمور المئه و الثامن و الثلاثون</a></li>
+        <li><a href="2 (139).html">المزمور المئه و التاسع و الثلاثون</a></li>
+        <li><a href="2 (140).html">المزمور المئه و الاربعون</a></li>
+        <li><a href="2 (141).html">المزمور المئه و الحادي و الاربعون</a></li>
+        <li><a href="2 (142).html">المزمور المئه و الثاني و الاربعون</a></li>
+        <li><a href="2 (143).html">المزمور المئه و الثالث و الاربعون</a></li>
+        <li><a href="2 (144).html">المزمور المئه و الرابع و الاربعون</a></li>
+        <li><a href="2 (145).html">المزمور المئه و الخامس و الاربعون</a></li>
+        <li><a href="2 (146).html">المزمور المئه و السادس و الاربعون</a></li>
+        <li><a href="2 (147).html">المزمور المئه و السابع و الاربعون</a></li>
+        <li><a href="2 (148).html">المزمور المئه و الثامن و الاربعون</a></li>
+        <li><a href="2 (149).html">المزمور المئه و التاسع و الاربعون</a></li>
+        <li><a href="2 (150).html">المزمور المئه و الخمسون</a></li>
+        <li><a href="2 (151).html">المزمور المئه و الحادي و الخمسون</a></li>
+             </div>
+          </div>
+    </dition>
+    </section>
+</section>
+
+    </main>
+    
+    <script>
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            document.body.classList.toggle('light-mode');
+        });
+
+        function toggleDropdown(id) {
+            var dropdown = document.getElementById(id);
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === "block") {
+                        openDropdown.style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+    <footer>
+        <p>&copy;جميع الحقوق محفوظه لكنسه القديسين بطرس و بولس بشبين الكوم</p>
+        <p>تصميم وتطوير بواسطة <a href="2 ().htmlhttps://www.misatechnoly.online/designer" target="_blank">Mina Samuel</a></p>
+        <p>مع شركه<a href="2 ().htmlhttps://www.misatechnoly.online" target="_blank">MISA Technolgy</a></p>
+    </footer>
+
+</body>
+</html>

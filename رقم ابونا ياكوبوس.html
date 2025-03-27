@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Amiri', serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            margin-top: 10px;
+            max-width: 800px;
+        }
+        
+        .input-group {
+            margin-bottom: 10px;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #800000;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .contact-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.contact-button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+
+
+        .navbar {
+            background-color: #800000;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .copy-btn {
+    background-color: #7a0000; /* Green */
+    border: none;
+    color: white;
+    padding: 25px 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.copy-btn:hover {
+    background-color: white;
+    color: black;
+    border: 3px solid #7a0000;
+}
+
+.priest-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .priest-info img {
+            width: 370px;
+            height: 370px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .priest-info .text {
+            font-size: 2em;
+        }
+
+        @media(min-width: 768px) {
+            .priest-info {
+                flex-direction: row;
+                text-align: left;
+            }
+
+            .priest-info img {
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="index.html">الرجوع</a>
+        
+        
+    </div>
+    <div class="priest-info">
+        <img src="6.png" alt="صورة الكاهن">
+    <div class="text">
+    <div class="container">
+        <h2 class="text-center">القس ياكوبوس صبري</h2>
+        <div class="input-group">
+            <input type="text" id="wordInput" class="form-control" value="01228628086" readonly>
+        </div>
+        <button class="copy-btn" onclick="copyWord()">نسخ</button>
+    </div>
+
+    <script>
+        function copyWord() {
+            var wordInput = document.getElementById("wordInput");
+            wordInput.select();
+            wordInput.setSelectionRange(0, 99999); // For mobile devices
+
+            document.execCommand("copy");
+
+            alert("تم النسخ : " + wordInput.value);
+        }
+    </script>
+</body>
+</html>
